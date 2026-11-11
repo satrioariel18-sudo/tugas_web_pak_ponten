@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodStore - Burger Terenak & Professional UMKM</title>
+
+    <!-- link goggle menggubah gaya tulisan pada teks -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                Satrio food<span>Store</span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Beranda</a>
+                <a href="#about" class="nav-link">tentang kami</a>
+                
+                    <li class="has-dropdown">
+                        <a class="nav-link dropdown-trigger" href="produk" aria-haspopup="true">Produk⌄</a>
+                            <div class="dropdown">
+                                <a href="produk.html#biji">Burger telur</a>
+                                <a href="produk.html#minuman">Risol mayo</a>
+                                <a href="produk.html#merchandise">Sandwich pedas & manis</a>
+                            </div>
+                    </li>
+                <a href="#katalog" class="nav-link">Katalog</a>
+            </nav>
+
+            
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-primary btn-register">Login / Register</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Bray Makan Disini Sudah Yang Paling Benar <span class="highlight">Cuma Order Di Sini</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Mau makan Hemat yang udah pasti enak, higienis, dan terjangkau? Cuma di Satrio FoodStore tempatnya! Disajikan dengan 100% bahan-bahan pilihan segar setiap harinya dijamin nagih bray.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary btn-large">Order Menu</a>
+                    <a href="#about" class="btn btn-outline btn-large">Tentang Kami</a>
+                </div>
+            </div>
+            <div class="hero-image-wrap">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Delicious Burger" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Menu Signature <span class="highlight">Pilihan Kamu</span></h2>
+                <p class="section-subtitle">Nikmati lezatnya varian makanan spesial kami dengan harga paling bersahabat bray.</p>
+            </div>
+
+            <div class="menu-filters">
+                <button class="filter-btn active" onclick="filterMenu('all')">Semua Menu</button>
+                <button class="filter-btn" onclick="filterMenu('signature')">Signature</button>
+                <button class="filter-btn" onclick="filterMenu('spicy')">Pedas Hot</button>
+                <button class="filter-btn" onclick="filterMenu('cheese')">sweet</button>
+            </div>
+
+            <div class="products-grid">
+                <!-- produk 1 -->
+                <div class="product-card" data-category="signature">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Burger Telur" class="product-img">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-title">Burger Telur</h3>
+                        <p class="product-desc">Dua lapis daging sapi yang lumer, dilengkapi selada segar, telur omega,keju cheddar, dan saus khas.</p>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-label">Mulai dari</span>
+                                <span class="price-val">Rp 10.000</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary" onclick="openOrderModal('Burger Telur', 10000)">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- produk 2 -->
+                <div class="product-card" data-category="spicy">
+                    <div class="product-img-wrapper">
+                        <img src="img/mae-mu-IZ0LRt1khgM-unsplash-removebg-preview.png" alt="Sandwich pedas" class="product-img">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-title">Sandwich pedas</h3>
+                        <p class="product-desc">Sandwich dengan saos pedas, potongan daging ,selada renyah, saus mayo yang manis.</p>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-label">Mulai dari</span>
+                                <span class="price-val">Rp 5.000</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary" onclick="openOrderModal('Sandwich pedas', 5000)">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- produk 3 -->
+                <div class="product-card" data-category="pedas hot">
+                    <div class="product-img-wrapper">
+                        <img src="img/Resep-Risol-Mayo-Lumer-Cocok-Untuk-Usaha-Kuliner.jpg" alt="Risol mayo" class="product-img">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-title">Risol mayo</h3>
+                        <p class="product-desc">Kulit lumpia yang krispi dan isiannya sosis daging dan telur rebus dikasi mayo pedas yang meleleh.</p>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-label">Mulai dari</span>
+                                <span class="price-val">Rp 4.000</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary" onclick="openOrderModal('Risol mayo', 4000)">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- produk 4 -->
+                <div class="product-card" data-category="signature">
+                    <div class="product-img-wrapper">
+                        <img src="img/Japanese-Fruit-Sandwich-Fruit-Sando-5576-I-1.jpg" alt="Sando" class="product-img">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-title">Sando</h3>
+                        <p class="product-desc">Roti yang dilapisi whip cream yang tebal dan di tambah dengan buah-buah segar di tengah rotinya.</p>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-label">Mulai dari</span>
+                                <span class="price-val">Rp 7.000</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary" onclick="openOrderModal('Sando', 7000)">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer" id="about">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3 class="footer-title">Satrio FoodStore</h3>
+                <p class="footer-text">
+                    Bisnis makanan yang dijual di sekolahan yang saya mulai dari masa SMA yang menjual makanan murah dan enak untuk anak-anak sekolahan.Kami juga menjaga standar kebersihan pada makanan dan memberikan bahan makanan terbaik.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Bantuan & Layanan</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Kemitraan / Franchise</a></li>
+                    <li><a href="#">Partnership</a></li>
+                    <li><a href="#">Kontak CS</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Ikuti Kami</h4>
+                <p class="footer-text">Dapatkan info promosi harian menarik melalui kanal resmi kami:</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+            <h3 class="modal-title">Form Pemesanan</h3>
+            <p class="modal-subtitle" id="modalProductName">Burger Name</p>
+            <form id="orderForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" class="form-control" placeholder="Masukkan nama kamu" required>
+                </div>
+                <div class="form-group">
+                    <label>Nomor WhatsApp</label>
+                    <input type="tel" class="form-control" placeholder="08xxxxxxxxxx" required>
+                </div>
+                <div class="form-group">
+                    <label>Jumlah</label>
+                    <input type="number" class="form-control" value="1" min="1" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Kirim Pesanan (WhatsApp)</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
